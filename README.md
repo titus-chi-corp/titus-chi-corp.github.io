@@ -1,2 +1,2 @@
-# titus-chi-corp.github.io
+titus-chi-corp.io
 A Website created by Titus &amp; Chi.

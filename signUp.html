@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>formpage</title>
+	<style type="text/css">
+		body{
+			background-color: skyblue;
+		}
+		h1{
+			text-align:center;
+		}
+	</style>
+	<script type="text/javascript">
+		function check_info()
+		{
+			var is_valid = false;
+			var name = document.getElementById('yourName').value;
+			var password = document.getElementById('password').value;
+			var email = document.getElementById('email').value;
+			for(var i = 0;i < email.length;i++)
+			{
+				if(email[i] == '@' && i!= email.length-1 && i!=0)
+				{
+					is_valid = true;
+					break;
+				}
+			}
+			if(name == "" || password == "" || email == "")
+			{
+				alert("please fill in all fields");
+				return false;
+			}
+			else if(password.length < 8)
+			{
+				alert("Password must be longer than 8 characters");
+				return false;
+			}
+	
+			else if(is_valid == false)
+			{
+				alert("Email adress is not valid");
+				return false;
+			}
+			else
+				return true;
+		}
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	
+</script>
+<h1>Sign up for an account!</h1>
+<form action="submitted.html" method = "GET" onsubmit="return check_info()">
+	Username: <input type="text" name="yourName" id="yourName">
+	<br />
+	Password: <input type="password" name="password" id="password">
+	     <br />
+	Email: <input type = "text" name = "email" id = "email">
+	<input type="submit" value="login">
+</form>
+</body>
+</html>

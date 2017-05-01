@@ -1,6 +1,26 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="https://titus-chi-corp.github.io/includes/background.css">
+	  <script type="text/javascript">
+		function check_info()
+		{
+			var name = document.getElementById('yourName').value;
+			var password = document.getElementById('password').value;
+			if(name == "" || password == "")
+			{
+				alert("please fill in all fields");
+				return false;
+			}
+			else if(password.length < 5)
+			{
+				alert("Password must be longer than 5 characters");
+				return false;
+			}
+
+			else
+				return true;
+		}
+	</script>
   </head>
   <title>
 		Home

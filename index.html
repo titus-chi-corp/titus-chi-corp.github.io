@@ -4,9 +4,11 @@
 	  <script type="text/javascript">
 		function check_info()
 		{
+			var is_valid = false;
 			var name = document.getElementById('yourName').value;
 			var password = document.getElementById('password').value;
-			if(name == "" || password == "")
+			var email = document.getElementById('email').value;
+			if(name == "" || password == "" || email == "")
 			{
 				alert("please fill in all fields");
 				return false;
@@ -16,7 +18,19 @@
 				alert("Password must be longer than 5 characters");
 				return false;
 			}
-
+			for(var i = 0;i < email.length;i++)
+			{
+				if(email[i] == '@' && i!= email.length)
+				{
+					is_valid = true;
+					break;
+				}
+			}
+			if(is_valid == false)
+			{
+				alert("Email adress is not valid");
+				return false;
+			}
 			else
 				return true;
 		}
@@ -35,12 +49,14 @@
     <a href="https://titus-chi-corp.github.io/PrimNum/">Prime Number Finder</a><br>
 	  <br />
 	  <br />
-	  Sign up for an account:
+	  Sign up for an account on titus chi corp:
      <form action="submitted.html" method = "get" onsubmit="return check_info()">
 	Name: <input type="text" name="yourName" id="yourName">
 	<br />
 	password: <input type="password" name="password" id="password">
-	<input type="submit" value="login">
+	     <br />
+	Email: <input type = "text" name = "email" id = "email">
+	<input type="submit" value="Sign up now!">
      </form> 
   </body>
 </html>

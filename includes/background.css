@@ -2,8 +2,8 @@
 body
 {
   background-image: url("https://titus-chi-corp.github.io/includes/77627.jpg");
-  background-size: contain;
-  background-repeat: no;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: yellow;
 }
 a{
